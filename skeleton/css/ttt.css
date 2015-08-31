@@ -1,0 +1,102 @@
+html, body, figure, figcaption, div, p {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: sans-serif;
+    text-align: center;
+    font-size: 60px;
+}
+
+h1 {
+  font-size: 60px;
+  margin: 30px;
+}
+
+figure {
+  display: block;
+  margin: 50px auto;
+  width: 600px;
+}
+
+.cell {
+  cursor: pointer;
+  float: left;
+  border-left: 5px solid #000;
+  border-top: 5px solid #000;
+  background: #ccc;
+  width: 100px;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.row:last-child .cell {
+  border-bottom: 5px solid #000;
+}
+
+.cell:hover {
+  background: #ff0;
+}
+
+.row {
+  border-right: 5px solid #000;
+  display: block;
+  width: 305px;
+  height: 100px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.group:after {
+  content: "";
+  clear: both;
+  display:block;
+}
+
+.cell.clicked {
+  background: #111;
+  cursor: default;
+}
+
+.cell:after {
+  display: block;
+  width: 100%;
+  line-height: 90px;
+}
+
+.x:after {
+  content: "X";
+  color: #0f0;
+}
+
+.o:after {
+  content: "O";
+  color: #22f;
+}
+
+.ttt:after {
+  color: #000;
+}
+
+.ttt.o:after {
+  content: "O wins!";
+}
+
+.ttt.x:after {
+  content: "X wins!";
+}
+
+.ttt.x .cell.x {
+  background: #060;
+}
+
+.ttt.o .cell.o {
+  background: #006;
+}
+
+.ttt.draw:after {
+  content: "Tie game!";
+}
+
+.ttt.over .cell {
+  cursor: default;
+}
